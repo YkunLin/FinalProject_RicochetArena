@@ -12,6 +12,7 @@ public class Projectile : MonoBehaviour
     
     [Header("Dynamic")]
     public bool hasBeenShot = false;
+    public float gravity = -9.8f;
 
     void Awake()
     {
@@ -26,6 +27,12 @@ public class Projectile : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (hasBeenShot)
+        {
+            //control projectile's gravity
+            rb.velocity += new Vector3(0, gravity * Time.fixedDeltaTime, 0);
+        }
+
         //Keep the bullet on the XY plane at all times
         Vector3 pos = transform.position;
         pos.z = 0;
