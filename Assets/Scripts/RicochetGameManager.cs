@@ -34,7 +34,7 @@ public class RicochetGameManager : MonoBehaviour
             levelEnded = true;
             Debug.Log("You Win!");
         }
-        else if(shotsTaken >= maxShots)
+        else if(shotsTaken >= maxShots && Projectile.projectileCount <= 0 && Enemy.enemyCount > 0)
         {
             levelEnded = true;
             Debug.Log("You Lose!");

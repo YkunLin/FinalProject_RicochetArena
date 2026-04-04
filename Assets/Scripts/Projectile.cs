@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class Projectile : MonoBehaviour
 {
+    public static int projectileCount = 0;
     private Rigidbody rb;
     private float stillTime = 0f;
     
@@ -15,6 +16,7 @@ public class Projectile : MonoBehaviour
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        projectileCount++;
     }
     // void Start()
     // {
@@ -32,7 +34,7 @@ public class Projectile : MonoBehaviour
         if (!hasBeenShot) return;
 
 
-        if(rb.velocity.magnitude < 0.1f)
+        if(rb.velocity.magnitude < 0.3f)
         {
             stillTime += Time.fixedDeltaTime;
 
@@ -45,5 +47,10 @@ public class Projectile : MonoBehaviour
         {
             stillTime = 0f;
         }     
+    }
+
+    void OnDestroy()
+    {
+        projectileCount--;
     }
 }
