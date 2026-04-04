@@ -719,11 +719,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: 
+  cloudProjectId: 7bdc02e8-9359-4be0-8a63-53d3d8942ce2
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: FinalProject_RicochetArena
+  organizationId: yankunlin2111
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
