@@ -32,7 +32,12 @@ public class Launcher : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(RicochetGameManager.S != null && RicochetGameManager.S.levelEnded) return;
+        if(RicochetGameManager.S != null)
+        {
+            if(RicochetGameManager.S.levelEnded) return;
+            if(RicochetGameManager.S.shotsTaken >= RicochetGameManager.S.maxShots) return;
+        }
+            
 
         aimingMode = true;
         projectile = Instantiate(projectilePrefab);
