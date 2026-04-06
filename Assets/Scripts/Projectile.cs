@@ -41,7 +41,7 @@ public class Projectile : MonoBehaviour
         if (!hasBeenShot) return;
 
 
-        if(rb.velocity.magnitude < 0.3f)
+        if(rb.velocity.magnitude < 0.5f)
         {
             stillTime += Time.fixedDeltaTime;
 
