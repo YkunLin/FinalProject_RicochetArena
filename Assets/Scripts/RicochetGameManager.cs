@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class RicochetGameManager : MonoBehaviour
 {
@@ -12,17 +13,20 @@ public class RicochetGameManager : MonoBehaviour
     public Text resultText;
 
 
+
     [Header("Game Setting")]
     public int maxShots = 3;
 
     [Header("Dynamic")]
     public int shotsTaken = 0;
     public bool levelEnded = false;
+    public float delayBeforeLoad = 2f;
 
 
     void Start()
     {
         UpdateShotsUI();
+        UpdateLevelUI();
         resultText.gameObject.SetActive(false);
     }
     void Awake()
@@ -41,6 +45,12 @@ public class RicochetGameManager : MonoBehaviour
     {
         int shotsLeft = maxShots - shotsTaken;
         shotsText.text = "Shots Left: " + shotsLeft;
+    }
+
+    void UpdateLevelUI()
+    {
+        int currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
+        levelText.text = "Level " + currentLevel;
     }
 
     void Update()
@@ -63,5 +73,33 @@ public class RicochetGameManager : MonoBehaviour
     {
         resultText.gameObject.SetActive(true);
         resultText.text = msg;
+
+        if(msg == "You Win!")
+        {
+            Invoke("LoadNextLevel", delayBeforeLoad);
+        }
+        else
+        {
+            Invoke("ReloadLevel", delayBeforeLoad);
+        }
+    }
+
+    void LoadNextLevel()
+    {
+        int currentIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextIndex = currentIndex +1;
+
+        //last level
+        if(nextIndex >= SceneManager.sceneCountInBuildSettings)
+        {
+            Debug.Log("Game Completed!");
+            return;
+        }
+        SceneManager.LoadScene(nextIndex);
+    }
+
+    void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
