@@ -418,6 +418,8 @@ MonoBehaviour:
   shotsText: {fileID: 2105104852}
   levelText: {fileID: 48437991}
   resultText: {fileID: 1321832282}
+  loseRetryButton: {fileID: 1488099983}
+  restartButton: {fileID: 1488099984}
   maxShots: 3
   shotsTaken: 0
   levelEnded: 0
@@ -1207,6 +1209,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 810189185, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 336240044}
+    - target: {fileID: 1246417913, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 336240044}
     - target: {fileID: 4228266532119032165, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1295,8 +1305,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6253701360339730716, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 336240044}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
+--- !u!114 &1488099983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1246417913, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
+  m_PrefabInstance: {fileID: 1488099982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1488099984 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6253701360339730716, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
+  m_PrefabInstance: {fileID: 1488099982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1524903759
 PrefabInstance:
   m_ObjectHideFlags: 0

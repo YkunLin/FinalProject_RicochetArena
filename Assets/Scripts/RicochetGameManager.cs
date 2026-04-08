@@ -7,10 +7,13 @@ using UnityEngine.SceneManagement;
 public class RicochetGameManager : MonoBehaviour
 {
     public static RicochetGameManager S;
+
     [Header("UI")]
     public Text shotsText;
     public Text levelText;
     public Text resultText;
+    public Button loseRetryButton;
+    public Button restartButton;
 
 
 
@@ -27,11 +30,16 @@ public class RicochetGameManager : MonoBehaviour
     {
         UpdateShotsUI();
         UpdateLevelUI();
+        
         resultText.gameObject.SetActive(false);
+        loseRetryButton.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
     }
     void Awake()
     {
         S = this;
+        Enemy.enemyCount = 0;
+        Projectile.projectileCount = 0;
     }
 
     public void ShotFired()
@@ -74,13 +82,13 @@ public class RicochetGameManager : MonoBehaviour
         resultText.gameObject.SetActive(true);
         resultText.text = msg;
 
-        if(msg == "You Win!")
+        if(msg == "You Lose!")
+        {
+            loseRetryButton.gameObject.SetActive(true);
+        }
+        else if(msg == "You Win!")
         {
             Invoke("LoadNextLevel", delayBeforeLoad);
-        }
-        else
-        {
-            Invoke("ReloadLevel", delayBeforeLoad);
         }
     }
 
@@ -92,7 +100,9 @@ public class RicochetGameManager : MonoBehaviour
         //last level
         if(nextIndex >= SceneManager.sceneCountInBuildSettings)
         {
-            Debug.Log("Game Completed!");
+            resultText.gameObject.SetActive(true);
+            resultText.text = "You Beat the Game!";
+            restartButton.gameObject.SetActive(true);
             return;
         }
         SceneManager.LoadScene(nextIndex);
@@ -101,5 +111,15 @@ public class RicochetGameManager : MonoBehaviour
     void ReloadLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void RetryLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(0);
     }
 }
