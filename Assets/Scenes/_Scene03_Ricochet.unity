@@ -970,7 +970,7 @@ Transform:
   m_GameObject: {fileID: 849891480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1.25}
-  m_LocalScale: {x: 50, y: 50, z: 1}
+  m_LocalScale: {x: 100, y: 100, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1327,18 +1327,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 336240044}
-    - target: {fileID: 810189185, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RetryLevel
-      objectReference: {fileID: 0}
     - target: {fileID: 1246417913, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 336240044}
-    - target: {fileID: 1246417913, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RetryLevel
-      objectReference: {fileID: 0}
     - target: {fileID: 4228266532119032165, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
       propertyPath: m_Name
       value: Canvas
@@ -1431,10 +1423,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 336240044}
-    - target: {fileID: 6253701360339730716, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RestartGame
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86b414ec7c43d924bb0f58742ba4bc4d, type: 3}
 --- !u!114 &1488099983 stripped
