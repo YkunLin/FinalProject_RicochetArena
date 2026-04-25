@@ -199,7 +199,7 @@ MonoBehaviour:
     2. Release to shoot
 
     3.
-    Destroy all red targets before running out of shots'
+    Destroy all enemies (red cubes, slimes, and spike monsters)'
 --- !u!222 &63905364
 CanvasRenderer:
   m_ObjectHideFlags: 0

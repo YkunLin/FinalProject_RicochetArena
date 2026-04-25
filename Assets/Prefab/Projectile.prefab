@@ -130,7 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hasBeenShot: 0
   gravity: -3
-  maxBounces: 15
+  maxBounces: 20
 --- !u!82 &4800826056711922529
 AudioSource:
   m_ObjectHideFlags: 0

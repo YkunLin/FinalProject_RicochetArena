@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: 7a1e8313eb8cf864e9a85e072aa09d69
+  - enabled: 1
     path: Assets/Scenes/_Scene01_Ricochet.unity
     guid: 7f7fe5ba644697a44a2260ab63b7dc82
   - enabled: 1
@@ -17,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/_Scene04_Ricochet.unity
     guid: c2cd31ada63d3c64787c2e9834079ad9
+  - enabled: 1
+    path: Assets/Scenes/_Scene05_Ricochet.unity
+    guid: 57692b96a5489a744bd6c6fab37602a7
+  - enabled: 1
+    path: Assets/Scenes/_Scene06_Ricochet.unity
+    guid: 3ee3d297ad99bc749a4e1bc403c8bbd9
   m_configObjects: {}

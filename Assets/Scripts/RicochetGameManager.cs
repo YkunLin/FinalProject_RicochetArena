@@ -59,7 +59,7 @@ public class RicochetGameManager : MonoBehaviour
     void UpdateLevelUI()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
-        levelText.text = "Level " + currentLevel;
+        levelText.text = "Level " + currentLevel + "/6";
     }
 
     void Update()
