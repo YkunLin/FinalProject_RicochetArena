@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public static int enemyCount = 0;
+    public AudioClip hitSound;
 
     void Start()
     {
@@ -16,6 +17,11 @@ public class Enemy : MonoBehaviour
         Projectile p = coll.gameObject.GetComponent<Projectile>();
         if(p != null)
         {
+            if(hitSound != null)
+            {
+                AudioSource.PlayClipAtPoint(hitSound, transform.position,10f);
+            }
+
             enemyCount--;
             Destroy(gameObject);
         }

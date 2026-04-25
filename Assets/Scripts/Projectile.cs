@@ -7,6 +7,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public static int projectileCount = 0;
+    private AudioSource audioSource;
     private Rigidbody rb;
     private float stillTime = 0f;
     
@@ -14,16 +15,17 @@ public class Projectile : MonoBehaviour
     public bool hasBeenShot = false;
     public float gravity = -9.8f;
 
+    [Header("Bounce Limit")]
+    public int maxBounces = 8;
+    private int bounceCount = 0;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
         projectileCount++;
+        audioSource = GetComponent<AudioSource>();
     }
-    // void Start()
-    // {
-    //     //Prevent bullets from remaining in the scene for too long
-    //     // Destroy(gameObject, 15f);
-    // }
+    
 
     void FixedUpdate()
     {
@@ -54,6 +56,25 @@ public class Projectile : MonoBehaviour
         {
             stillTime = 0f;
         }     
+    }
+
+    void OnCollisionEnter(Collision coll)
+    {
+        if(audioSource != null)
+        {
+            audioSource.Play();
+        }
+        
+        if(coll.gameObject.GetComponent<Enemy>() != null)
+        {
+            return;
+        }
+        bounceCount++;
+
+        if (bounceCount >= maxBounces)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnDestroy()

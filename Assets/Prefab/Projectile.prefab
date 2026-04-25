@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 4632648143933054126}
   - component: {fileID: 7459819717183329096}
   - component: {fileID: 6355888785581487464}
-  - component: {fileID: 2556060449801356507}
   - component: {fileID: -5206669942710561705}
+  - component: {fileID: 4800826056711922529}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -116,7 +116,22 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 56
   m_CollisionDetection: 1
---- !u!82 &2556060449801356507
+--- !u!114 &-5206669942710561705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7156500765102003543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc01f03f820fef4cbb28d6d0c18bd89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasBeenShot: 0
+  gravity: -3
+  maxBounces: 15
+--- !u!82 &4800826056711922529
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,8 +141,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -212,17 +227,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &-5206669942710561705
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7156500765102003543}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fc01f03f820fef4cbb28d6d0c18bd89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasBeenShot: 0
-  gravity: -3

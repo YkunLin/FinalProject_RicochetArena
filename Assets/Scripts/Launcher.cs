@@ -18,8 +18,11 @@ public class Launcher : MonoBehaviour
 
     public LineRenderer aimLine;
 
+
+    AudioSource audioSource;
     void Awake()
-    {
+    {   
+        audioSource = GetComponent<AudioSource>();
         Transform launchPointTrans = transform.Find("LaunchPoint");
         if(launchPointTrans != null)
         {
@@ -89,6 +92,11 @@ public class Launcher : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             aimingMode = false;
+
+            if(audioSource != null)
+            {
+                audioSource.Play();
+            }
 
             Rigidbody projRB = projectile.GetComponent<Rigidbody>();
             projRB.isKinematic = false;
