@@ -338,7 +338,7 @@ MonoBehaviour:
   loseRetryButton: {fileID: 1488099983}
   restartButton: {fileID: 1488099984}
   instructionPanel: {fileID: 0}
-  maxShots: 3
+  maxShots: 4
   shotsTaken: 0
   levelEnded: 0
   delayBeforeLoad: 2

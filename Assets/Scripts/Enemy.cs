@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public static int enemyCount = 0;
     public AudioClip hitSound;
+    public GameObject hitEffect;
 
     void Start()
     {
@@ -19,7 +20,11 @@ public class Enemy : MonoBehaviour
         {
             if(hitSound != null)
             {
-                AudioSource.PlayClipAtPoint(hitSound, transform.position,10f);
+                AudioSource.PlayClipAtPoint(hitSound, transform.position);
+            }
+            if(hitEffect!= null)
+            {
+                Instantiate(hitEffect, transform.position, Quaternion.identity);
             }
 
             enemyCount--;

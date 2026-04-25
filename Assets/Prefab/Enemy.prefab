@@ -111,3 +111,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitSound: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+  hitEffect: {fileID: 8150328499263315027, guid: cfb6f00d2dc52de4689a55e550f72e16, type: 3}
