@@ -16,6 +16,8 @@ public class Launcher : MonoBehaviour
     public GameObject projectile;
     public bool aimingMode = false;
 
+    public LineRenderer aimLine;
+
     void Awake()
     {
         Transform launchPointTrans = transform.Find("LaunchPoint");
@@ -49,6 +51,22 @@ public class Launcher : MonoBehaviour
     void Update()
     {
         if (!aimingMode) return;
+
+        if (aimingMode)
+        {
+            aimLine.enabled = true;
+            Vector3 mD = projectile.transform.position - launchPos;
+            Vector3 shootDir = -mD.normalized;
+
+            float lineLength = 5f;
+
+            aimLine.SetPosition(0, launchPos);
+            aimLine.SetPosition(1, launchPos + shootDir * lineLength);
+        }
+        else
+        {
+            aimLine.enabled = false;
+        }
 
         Vector3 mousePos2D = Input.mousePosition;
         mousePos2D.z = -Camera.main.transform.position.z;

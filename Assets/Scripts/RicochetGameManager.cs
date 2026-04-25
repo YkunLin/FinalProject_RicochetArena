@@ -14,6 +14,7 @@ public class RicochetGameManager : MonoBehaviour
     public Text resultText;
     public Button loseRetryButton;
     public Button restartButton;
+    public GameObject instructionPanel;
 
 
 
@@ -121,5 +122,13 @@ public class RicochetGameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(0);
+    }
+
+    public void CloseInstruction()
+    {
+        if (instructionPanel != null)
+        {
+            instructionPanel.SetActive(false);
+        }
     }
 }
