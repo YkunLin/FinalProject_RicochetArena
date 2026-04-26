@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
-    guid: 7a1e8313eb8cf864e9a85e072aa09d69
+    guid: 5557ab40801ad5f44b631e239cde0ddc
   - enabled: 1
     path: Assets/Scenes/_Scene01_Ricochet.unity
     guid: 7f7fe5ba644697a44a2260ab63b7dc82
