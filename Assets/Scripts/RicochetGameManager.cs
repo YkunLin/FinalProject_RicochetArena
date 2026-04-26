@@ -14,6 +14,7 @@ public class RicochetGameManager : MonoBehaviour
     public Text resultText;
     public Button loseRetryButton;
     public Button restartButton;
+    public Button menuButton;
     public GameObject instructionPanel;
 
 
@@ -35,6 +36,7 @@ public class RicochetGameManager : MonoBehaviour
         resultText.gameObject.SetActive(false);
         loseRetryButton.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
+        menuButton.gameObject.SetActive(false);
     }
     void Awake()
     {
@@ -58,7 +60,7 @@ public class RicochetGameManager : MonoBehaviour
 
     void UpdateLevelUI()
     {
-        int currentLevel = SceneManager.GetActiveScene().buildIndex + 1;
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
         levelText.text = "Level " + currentLevel + "/6";
     }
 
@@ -104,6 +106,7 @@ public class RicochetGameManager : MonoBehaviour
             resultText.gameObject.SetActive(true);
             resultText.text = "You Beat the Game!";
             restartButton.gameObject.SetActive(true);
+            menuButton.gameObject.SetActive(true);
             return;
         }
         SceneManager.LoadScene(nextIndex);
@@ -120,6 +123,11 @@ public class RicochetGameManager : MonoBehaviour
     }
 
     public void RestartGame()
+    {
+        SceneManager.LoadScene(1);
+    }
+
+    public void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
     }
